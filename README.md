@@ -1,5 +1,10 @@
 # ThorVG Go Bindings
 
+[![Go](https://github.com/millken/thorvg/workflows/Go/badge.svg)](https://github.com/millken/thorvg/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/millken/thorvg)](https://goreportcard.com/report/github.com/millken/thorvg)
+[![GoDoc](https://godoc.org/github.com/millken/thorvg?status.svg)](https://godoc.org/github.com/millken/thorvg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 Go bindings for [ThorVG](https://github.com/thorvg/thorvg), a platform-independent portable library for drawing vector-based scenes and animations.
 
 ## Features
@@ -151,8 +156,18 @@ canvas.Push(&picture.Paint)
 
 See the [examples](./examples) directory for complete working examples:
 
-- `simple.go`: Basic shapes and rendering
-- More examples coming soon!
+- `simple.go`: Basic shapes and rendering with rectangles and circles
+- `svg_loader.go`: Loading and rendering SVG files
+- `complex_shapes.go`: Advanced example with multiple shapes, transparency, and colors
+
+To run an example:
+
+```bash
+# Make sure ThorVG C library is installed first
+go run examples/simple.go
+go run examples/svg_loader.go myfile.svg
+go run examples/complex_shapes.go
+```
 
 ## Building
 
