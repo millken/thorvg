@@ -30,3 +30,13 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Output files from examples
+*.png
+*.jpg
+*.jpeg
+output.*
+
+# Temporary files
+/tmp/
+*.tmp
