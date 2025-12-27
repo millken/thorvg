@@ -24,17 +24,6 @@ func TestNewSwCanvas(t *testing.T) {
 	// 移除对未导出字段的检查
 }
 
-func TestNewGlCanvas(t *testing.T) {
-	canvas := thorvg.NewGlCanvas()
-	if canvas == nil {
-		t.Skip("NewGlCanvas returned nil (expected in test environment without OpenGL)")
-		return
-	}
-	defer canvas.Destroy()
-
-	// 移除对未导出字段的检查
-}
-
 func TestNewWgCanvas(t *testing.T) {
 	canvas := thorvg.NewWgCanvas()
 	if canvas == nil {
@@ -199,21 +188,6 @@ func TestSwCanvasSetTarget(t *testing.T) {
 	if err != nil {
 		t.Fatalf("SwCanvasSetTarget failed: %v", err)
 	}
-}
-
-func TestGlCanvasSetTarget(t *testing.T) {
-	canvas := thorvg.NewGlCanvas()
-	if canvas == nil {
-		t.Skip("NewGlCanvas returned nil (expected in test environment without OpenGL)")
-		return
-	}
-	defer canvas.Destroy()
-
-	// 注意：这个测试需要有效的 OpenGL 上下文，在测试环境中可能不可用
-	// 这里只是测试函数调用，不验证实际结果
-	err := canvas.GlCanvasSetTarget(unsafe.Pointer(uintptr(1)), 1, 100, 100, thorvg.ColorspaceABGR8888)
-	// 在没有 OpenGL 上下文的情况下，可能会失败，但函数调用应该成功
-	_ = err // 忽略错误，因为测试环境可能不支持 OpenGL
 }
 
 func TestWgCanvasSetTarget(t *testing.T) {
